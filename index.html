@@ -1,13 +1,29 @@
 <html>
 <body>
 
-<form action="welcome.php" method="get">
+<form name="myForm" action="welcome.php" onsubmit="return validateForm()" method="get">
   Name: <input type="text" name="name"><br>
   E-mail: <input type="text" name="email"><br>
   Phone Number: <input type="text" name="phone"><br>
   State of Residence: <input type="text" name="residence"><br>
   <input type="submit">
 </form>
+
+
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["name"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  var y = document.forms["myForm"]["email"].value;
+  if (y == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+}
+</script>
 
 </body>
 </html>
